@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "40ee7593-139a-4284-950b-e171d7882456",
+		"name": "AmadeusCentralAPI_Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1c44ea8-658e-48d1-9fa4-df462ff771f0",
+						"exec": [
+							"const response = pm.response.json();\r",
+							"pm.globals.set(\"token\", response.access_token);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"client_id\":\"{{clientid}}\",\"client_secret\":\"{{clientsecret}}\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://195.216.47.12/NetSysV5/NetSys.Components.AmadeusCentralAPIRequestListner/AmadeusRequestListner.svc/v1/authorization",
+					"protocol": "https",
+					"host": [
+						"195",
+						"216",
+						"47",
+						"12"
+					],
+					"path": [
+						"NetSysV5",
+						"NetSys.Components.AmadeusCentralAPIRequestListner",
+						"AmadeusRequestListner.svc",
+						"v1",
+						"authorization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Availability",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ecb17ce-011a-4f88-8149-e2c539d97719",
+						"exec": [
+							"response = JSON.parse(responseBody)\r",
+							"picIATA = response.transfer[0].pickup.iata\r",
+							"console.log(picIATA);\r",
+							"pm.environment.set(\"apickupIATA\",picIATA)\r",
+							"\r",
+							"pickupAddress=response.transfer[0].pickup.address\r",
+							"pm.environment.set(\"pickupAddress\",pickupAddress)\r",
+							"\r",
+							"pickupZip=response.transfer[0].pickup.zip\r",
+							"pm.environment.set(\"pickupZip\",pickupZip)\r",
+							"\r",
+							"pickupcountry= response.transfer[0].pickup.country\r",
+							"pm.environment.set(\"pickupcountry\",pickupcountry)\r",
+							"\r",
+							"pickupcity = response.transfer[0].pickup.city\r",
+							"pm.environment.set(\"pickupcity\",pickupcity)\r",
+							"\r",
+							"pickupLat = response.transfer[0].pickup.latitude\r",
+							"pm.environment.set(\"pickupLat\",pickupLat)\r",
+							"\r",
+							"pickupLong = response.transfer[0].pickup.longitude\r",
+							"pm.environment.set(\"pickupLong\",pickupLong)\r",
+							"\r",
+							"dropoffIATA=response.transfer[0].dropoff.iata\r",
+							"pm.environment.set(\"dropoffIATA\",dropoffIATA)\r",
+							"\r",
+							"dropoffAddress=response.transfer[0].dropoff.address\r",
+							"pm.environment.set(\"dropoffAddress\",dropoffAddress)\r",
+							"\r",
+							"dropoffZip=response.transfer[0].dropoff.zip\r",
+							"pm.environment.set(\"dropoffZip\",dropoffZip)\r",
+							"\r",
+							"dropoffcountry= response.transfer[0].dropoff.country\r",
+							"pm.environment.set(\"dropoffcountry\",dropoffcountry)\r",
+							"\r",
+							"dropoffcity = response.transfer[0].dropoff.city\r",
+							"pm.environment.set(\"dropoffcity\",dropoffcity)\r",
+							"\r",
+							"dropoffLat = response.transfer[0].dropoff.latitude\r",
+							"pm.environment.set(\"dropoffLat\",dropoffLat)\r",
+							"\r",
+							"dropoffLong = response.transfer[0].dropoff.longitude\r",
+							"pm.environment.set(\"dropoffLong\",dropoffLong)\r",
+							"\r",
+							"qidentifier =response.transfer[0].quotation.quote[0].quoteIdentifier\r",
+							"pm.environment.set(\"qidentifier\",qidentifier)\r",
+							"\r",
+							"qtype = response.transfer[0].quotation.quote[0].type\r",
+							"pm.environment.set(\"qtype\",qtype)\r",
+							"\r",
+							"qpCurrCode = response.transfer[0].quotation.quote[0].priceCurrencyCode\r",
+							"pm.environment.set(\"qpCurrCode\",qpCurrCode)\r",
+							"\r",
+							"qpDecPlace = response.transfer[0].quotation.quote[0].priceDecimalPlaces\r",
+							"pm.environment.set(\"qpDecPlace\",qpDecPlace)\r",
+							"\r",
+							"qprcAmt = response.transfer[0].quotation.quote[0].priceAmount\r",
+							"pm.environment.set(\"qprcAmt\",qprcAmt)\r",
+							"\r",
+							"qtaxCurrcode = response.transfer[0].quotation.quote[0].taxCurrencyCode\r",
+							"pm.environment.set(\"qtaxCurrcode\",qtaxCurrcode)\r",
+							"\r",
+							"qtaxDecPlace = response.transfer[0].quotation.quote[0].taxDecimalPlaces\r",
+							"pm.environment.set(\"qtaxDecPlace\",qtaxDecPlace)\r",
+							"\r",
+							"qtaxAmounr = response.transfer[0].quotation.quote[0].taxAmount\r",
+							"pm.environment.set(\"qtaxAmounr\",qtaxAmounr)\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currencyCode\": \"EUR\",\r\n    \"languageCode\": \"EN\",\r\n    \"altLanguageCode\": null,\r\n    \"transferServiceType\": \"Transfer Private\",\r\n    \"numberOfPassengers\": 1,\r\n    \"pickup\": {\r\n        \"dateTime\": \"2021-03-31T13:59:00\",\r\n        \"iata\": \"{{PickupIATA}}\",\r\n        \"address\": \"{{Pickup}}\",\r\n        \"zip\": \"{{PZip}}\",\r\n        \"country\": \"{{Pcountry}}\",\r\n        \"state\": null,\r\n        \"city\": \"{{Pcity}}\",\r\n        \"latitude\": {{plat}},\r\n        \"longitude\": {{plong}},\r\n        \"meetingPoint\": null\r\n    },\r\n    \"dropoff\": {\r\n        \"dateTime\": null,\r\n        \"iata\": \"{{DropIATA}}\",\r\n        \"address\": \"{{Daddress}}\",\r\n        \"zip\": \"{{Dzip}}\",\r\n        \"country\": \"{{Dcountry}}\",\r\n        \"state\": \"NY\",\r\n        \"city\": \"{{Dcity}}\",\r\n        \"latitude\": {{dLat}},\r\n        \"longitude\": {{dlong}},\r\n        \"meetingPoint\": null\r\n    },\r\n    \"baggage\": null,\r\n    \"vehicle\": null,\r\n    \"driver\": null,\r\n    \"service\": null,\r\n    \"promotionalCode\": null,\r\n    \"corporateNumber\": null,\r\n    \"amadeusOfficeID\": \"IEV1A0987\",\r\n    \"amadeusTransactionID\": \"6fab2a00a54dca54e63222fbf9de9722\",\r\n    \"pnrRecordLocator\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://195.216.47.12/NetSysV5/NetSys.Components.AmadeusCentralAPIRequestListner/AmadeusRequestListner.svc/v1/availability",
+					"protocol": "https",
+					"host": [
+						"195",
+						"216",
+						"47",
+						"12"
+					],
+					"path": [
+						"NetSysV5",
+						"NetSys.Components.AmadeusCentralAPIRequestListner",
+						"AmadeusRequestListner.svc",
+						"v1",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d56cf56-fef5-4c05-ad03-3974bc6d349f",
+						"exec": [
+							"bookresponse = JSON.parse(responseBody)\r",
+							"bookingNumber = bookresponse.confirmationNumber\r",
+							"pm.environment.set(\"bookNumber\",bookingNumber)\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fdca436d-3bb4-46f2-9c68-0512011ab235",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bareer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"languageCode\": \"SEK\",\r\n  \"altLanguageCode\": \"SV\",\r\n  \"transferServiceType\": \"Transfer Private\",\r\n  \"pickup\": {\r\n    \"dateTime\": \"2021-03-31T13:59:00\",\r\n    \"iata\": \"{{apickupIATA}}\",\r\n    \"address\": \"{{pickupAddress}}\",\r\n    \"zip\": \"{{pickupZip}}\",\r\n    \"country\": \"{{pickupcountry}}\",\r\n    \"state\": null,\r\n    \"city\": \"{{pickupcity}}\",\r\n    \"latitude\": {{pickupLat}},\r\n    \"longitude\": {{pickupLong}},\r\n    \"meetingPoint\": null\r\n  },\r\n            \"dropoff\": {\r\n                \"dateTime\": \"2021-03-31T14:47:00\",\r\n                \"iata\": \"{{dropoffIATA}}\",\r\n                \"address\": \"{{dropoffAddress}}\",\r\n                \"zip\": \"{{dropoffZip}}\",\r\n                \"country\": \"{{dropoffcountry}}\",\r\n                \"state\": \"NY\",\r\n                \"city\": \"{{dropoffcity}}\",\r\n                \"latitude\": {{dropoffLat}},\r\n                \"longitude\": {{dropoffLong}},\r\n                \"meetingPoint\": null\r\n  },\r\n  \"numberOfPassengers\": 1,\r\n  \"duration\": null,\r\n  \"flightNumber\": null,\r\n  \"passenger\": [\r\n    {\r\n      \"type\": \"main\",\r\n      \"title\": null,\r\n      \"age\": null,\r\n      \"firstName\": \"TEST\",\r\n      \"lastName\": \"BOOKING\",\r\n      \"mobilePhone\": \"+923441234567\",\r\n      \"email\": \"muhammad.islam@mycabtravel.com\",\r\n      \"address\": {\r\n        \"addressLine\": null,\r\n        \"zip\": null,\r\n        \"city\": null,\r\n        \"country\": null\r\n      }\r\n    }\r\n  ],\r\n  \"baggage\": {\r\n    \"type\": null,\r\n    \"quantity\": 0\r\n  },\r\n  \"remark\":\"Avoid answering questions. His pathological needs of control manifest in question. \",\r\n  \"quotation\": {\r\n    \"quote\": [\r\n      {\r\n                       \"quoteIdentifier\": \"{{qidentifier}}\",\r\n                        \"type\": \"{{qtype}}\",\r\n                        \"priceCurrencyCode\": \"{{qpCurrCode}}\",\r\n                        \"priceDecimalPlaces\": \"{{qpDecPlace}}\",\r\n                        \"priceAmount\": \"{{qprcAmt}}\",\r\n                        \"taxCurrencyCode\": \"{{qtaxCurrcode}}\",\r\n                        \"taxDecimalPlaces\": \"{{qtaxDecPlace}}\",\r\n                        \"taxAmount\": \"{{qtaxAmounr}}\"\r\n      }\r\n    ],\r\n    \"discount\": null\r\n  },\r\n  \"corporateNumber\": null,\r\n  \"promotionalCode\": null,\r\n  \"loyaltyNumber\": null,\r\n \"paymentMethod\": \"creditcard\",\r\n  \"payment\": {\r\n    \"card\": {\r\n      \"number\": \"4242424242424242\",\r\n      \"holderName\": \"Muhammad Islam\",\r\n      \"expiryDate\": \"0221\",\r\n      \"cvv\": \"210\",\r\n      \"vendorCode\": \"VI\",\r\n      \"info\": null\r\n    },\r\n    \"invoiceReference\": null\r\n  },\r\n \"vehicle\": {\r\n                \"seatsCapacity\": 1,\r\n                \"description\": \"AUDI A4\",\r\n                \"bkgClass\": \"ST\",\r\n                \"category\": \"CAR\",\r\n                \"carBrand\": \"AUDI A4\",\r\n                \"carModel\": \"\",\r\n                \"color\": \"\",\r\n                \"maxLuggage\": [\r\n                    {\r\n                        \"type\": \"SMALL\",\r\n                        \"quantity\": 1\r\n                    },\r\n                    {\r\n                        \"type\": \"MEDIUM\",\r\n                        \"quantity\": 1\r\n                    },\r\n                    {\r\n                        \"type\": \"LARGE\",\r\n                        \"quantity\": 1\r\n                    }\r\n                ],\r\n                \"review\": [\r\n                    {\r\n                        \"score\": \"\"\r\n                    }\r\n                ]\r\n            },\r\n  \"driver\": {\r\n    \"firstName\": null,\r\n    \"lastName\": null,\r\n    \"phoneNumber\": null,\r\n    \"language\": null,\r\n    \"altLanguage\": null,\r\n    \"review\": [\r\n      \r\n    ]\r\n  },\r\n  \"serviceCharges\": [\r\n    \r\n  ],\r\n  \"amadeusTransactionID\": null,\r\n  \"travelAgencyIATA\": null,\r\n  \"pnrRecordLocator\": null,\r\n  \"amadeusOfficeID\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://195.216.47.12/NetSysV5/NetSys.Components.AmadeusCentralAPIRequestListner/AmadeusRequestListner.svc/v1/booking",
+					"protocol": "https",
+					"host": [
+						"195",
+						"216",
+						"47",
+						"12"
+					],
+					"path": [
+						"NetSysV5",
+						"NetSys.Components.AmadeusCentralAPIRequestListner",
+						"AmadeusRequestListner.svc",
+						"v1",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancellation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4bd0a8c-3ec7-4b9b-a0b2-567ed235a3df",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2196103e-8c98-465d-a831-c536ea5d697e",
+						"exec": [
+							"timestampUtcIso8601 = new Date().toISOString()\r",
+							"console.log(timestampUtcIso8601);\r",
+							"postman.setGlobalVariable(\"timestampUtcIso8601\", timestampUtcIso8601);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bareer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookingNumber\": \"{{bookNumber}}\",\r\n  \"timeStamp\": \"{{timestampUtcIso8601}}\",\r\n  \"cancellationType\": \"Functional\",\r\n  \"corporateDiscountID\": null,\r\n  \"cancelledBy\": \"Customer\",\r\n  \"transactionID\": null,\r\n  \"amadeusOfficeID\": null,\r\n  \"travelAgencyIATA\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://195.216.47.12/NetSysV5/NetSys.Components.AmadeusCentralAPIRequestListner/AmadeusRequestListner.svc/v1/booking/cancellation",
+					"protocol": "https",
+					"host": [
+						"195",
+						"216",
+						"47",
+						"12"
+					],
+					"path": [
+						"NetSysV5",
+						"NetSys.Components.AmadeusCentralAPIRequestListner",
+						"AmadeusRequestListner.svc",
+						"v1",
+						"booking",
+						"cancellation"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

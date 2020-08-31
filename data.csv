@@ -1,0 +1,21 @@
+clientid,clientsecret,PickupIATA,Pickup,PZip,Pcountry,Pcity,plat,plong,DropIATA,Daddress,Dzip,Dcountry,Dcity,dLat,dlong
+uktest,dGVzdF9jbGllbnQ=,LHR,London Heathrow,,GB,London,51.47294,-0.45061,,Harebell Hill  21,,GB,Cobham,51.3297479,-0.3935804
+pincode,dGVzdF9jbGllbnQ=,LHR,London Heathrow,,GB,London,51.47294,-0.45061,,Harebell Hill  21,,GB,Cobham,51.3297479,-0.3935804
+uktest,dGVzdF9jbGllbnQ=,,Emden shipyard and dock GmbH  Zum Zungenkai  Emden  Germany,26725,DE,Emden,53.3540301,7.1986635,BRE,Bremen Airport,,DE,Bremen,53.0475,8.78667
+pincode,dGVzdF9jbGllbnQ=,,Emden shipyard and dock GmbH  Zum Zungenkai  Emden  Germany,26725,DE,Emden,53.3540301,7.1986635,BRE,Bremen Airport,,DE,Bremen,53.0475,8.78667
+uktest,dGVzdF9jbGllbnQ=,,Emden shipyard and dock GmbH  Zum Zungenkai  Emden  Germany,26725,DE,Emden,53.3540301,7.1986635,BRE,Bremen Airport,,DE,Bremen,53.0475,8.78667
+pincode,dGVzdF9jbGllbnQ=,,Bellairs  Sutton  Ely CB6 2RW  UK,CB6 2RW,GB,Sutton,52.3902286,0.1147529,STN,Stansted Airport,,GB,London,51.885,0.235
+uktest,dGVzdF9jbGllbnQ=,CLT,Charlotte Douglas International Airport,,US,Charlotte,35.2207,-80.94413,,Ballantyne Corporate Pl  13139,28277,US,Charlotte,35.0583702,-80.8447409
+pincode,dGVzdF9jbGllbnQ=,,White City Station  Wood Lane  London  UK,W12 7RH,GB,London,51.5122604,-0.2245105,,Gatwick South Terminal  Horley  Gatwick  UK,RH6 0NP,GB,Horley,51.1577532,-0.1619743
+uktest,dGVzdF9jbGllbnQ=,LGA,La Guardia Airport,,US,New York,40.77607,-73.87269,,Crawfords Corner Rd  101,7733,US,Holmdel,40.3719801,-74.1597375
+pincode,dGVzdF9jbGllbnQ=,LOS,Murtala Mohammed International Airport,,NG,Lagos,6.57737,3.32116,,Golden Tulip Oniru  Lagos  Elegba Festival Drive  Lagos  Nigeria,,NG,Lagos,6.432101,3.4480499
+uktest,dGVzdF9jbGllbnQ=,ABV,Nnamdi Azikiwe International Airport,,NG,Abuja,9.00657,7.26419,,PEACE MEDIA HOTELS  Abuja  Nigeria,,NG,Abuja,9.001643,7.280309
+pincode,dGVzdF9jbGllbnQ=,NAP,Naples International Airport,,IT,Naples,40.88603,14.29078,RRO,Via Sant'Antonio  13,80067,IT,Sorrento,40.6207394,14.3720361
+uktest,dGVzdF9jbGllbnQ=,HKG,Hong Kong International Airport,,HK,Hong Kong,22.31459,113.93243,,Qinglin Rd  229,518172,CN,Shenzhen Shi,22.718742,114.214596
+pincode,dGVzdF9jbGllbnQ=,HKG,Hong Kong International Airport,,HK,Hong Kong,22.31459,113.93243,,Convention Avenue  Wan Chai  Hong Kong,518172,HK,,22.2821527,114.1742198
+uktest,dGVzdF9jbGllbnQ=,WUH,Wuhan Tianhe International Airport,,CN,Wuhan,30.78376,114.2081,,Hubei University of Technology  Hongshan  Wuhan  China,430060,CN,Wuhan,30.481761,114.31096
+pincode,dGVzdF9jbGllbnQ=,BHX,Birmingham Airport,,GB,Birmingham,52.45386,-1.74803,,Chapel Street  Belper DE56 1AR  UK,DE56 1AR,GB,Belper,53.022209,-1.4846766
+uktest,dGVzdF9jbGllbnQ=,MAN,Manchester Airport,,GB,Manchester,53.35374,-2.27495,,Warrington WA1 4GB  UK,WA1 4GB,GB,Warrington,53.3963082,-2.511845
+pincode,dGVzdF9jbGllbnQ=,PVG,Shanghai Pudong International Airport,,CN,Shanghai,31.14338,121.80521,,InterContinental Shanghai Pudong  Pudong  China,200088,CN,,31.229531,121.521604
+uktest,dGVzdF9jbGllbnQ=,BOM,Chhatrapati Shivaji International Airport,,IN,Mumbai,19.08869,72.86792,,Krishna Palace Hotel  Vagad Nagar  Beverly Park  Mira Road  Mira Bhaya,401107,IN,Mira Bhayandar,19.2938258,72.8711158
+pincode,dGVzdF9jbGllbnQ=,BOM,Chhatrapati Shivaji International Airport,,IN,Mumbai,19.08869,72.86792,,Sleater Rd  98,400007,IN,Mumbai,18.9625335,72.8142165

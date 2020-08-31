@@ -1,0 +1,3 @@
+clientid,clientsecret,PickupIATA,Pickup,PZip,Pcountry,Pcity,plat,plong,DropIATA,Daddress,Dzip,Dcountry,Dcity,dLat,dlong
+uktest,dGVzdF9jbGllbnQ=,LGA,La Guardia Airport,,US,New York,40.77607,-73.87269,,Crawfords Corner Rd  101,7733,US,Holmdel,40.3719801,-74.1597375
+uktest,dGVzdF9jbGllbnQ=,MAN,Manchester Airport,,GB,Manchester,53.35374,-2.27495,,Warrington WA1 4GB  UK,WA1 4GB,GB,Warrington,53.3963082,-2.511845
